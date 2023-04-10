@@ -12,7 +12,15 @@
     <p class="alert"><%= alert %></p>
   </head>
 
-  <body class="container">
-    <%= yield %>
+  <body>
+    <div class="container d-flex flex-column">
+      <div class="row">
+        <div class="col-md-12 d-flex flex-column">
+          <%= render 'shared/nav' %>
+          <%= yield %>
+      
+        </div>
+      </div>
+    </div>
   </body>
 </html>
