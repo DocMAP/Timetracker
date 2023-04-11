@@ -9,19 +9,23 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag 'favicons/3nails.ico' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
   </head>
 
   <body>
-    <div class="container d-flex flex-column">
+    <div class="container">
       <div class="row">
-        <div class="col-md-12 d-flex flex-column">
+        <div class="col-md-2">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+        <div class="col-md-8">
           <%= render 'shared/nav' %>
           <%= yield %>
       
         </div>
       </div>
     </div>
+
   </body>
 </html>
