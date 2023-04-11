@@ -1,10 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "posts.scss";
+@import "bourbon";
 
-/*
-*= require gritter
-*/
 
 .custom-nav {
 	margin-top: 15px;
