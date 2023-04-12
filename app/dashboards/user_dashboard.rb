@@ -63,6 +63,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_name
     reset_password_sent_at
     reset_password_token
+    type
   ].freeze
 
   # COLLECTION_FILTERS
