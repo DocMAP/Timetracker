@@ -14,6 +14,7 @@ class PostDashboard < Administrate::BaseDashboard
     user: Field::BelongsTo.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    status: Field::Text.with_options(searchable: true),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,19 +23,20 @@ class PostDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    id
+    user
+    status
     date
     rationale
-    user
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    user
+    status
     date
     rationale
-    user
     created_at
     updated_at
   ].freeze
@@ -46,6 +48,7 @@ class PostDashboard < Administrate::BaseDashboard
     date
     rationale
     user
+    status
   ].freeze
 
   # COLLECTION_FILTERS
