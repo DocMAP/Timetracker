@@ -2,7 +2,6 @@
 	<h1>Time Tracker</h1>
 </div>
 
-<% if current_user %>
 <ul class="custom-nav nav nav-tabs">
 	<li class="<%= active?(root_path) %> nav-item">
 		<%= link_to "Home", root_path %>
@@ -16,6 +15,7 @@
 	<li class="nav-item">
 		<a class="nav-link disabled" href="#">Messages</a>
 	</li>
+	<% if current_user %>
 	<li class="nav-item dropdown ml-md-auto pull-right d-flex">
 		<div class="dropdown dropdown-toggle">
 			<% if current_user.type == 'AdminUser' %>

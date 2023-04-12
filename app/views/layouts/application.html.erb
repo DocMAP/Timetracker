@@ -13,20 +13,24 @@
   </head>
 
   <body>
-    <div class="container">
+    <div>
       <div class="row">
         <div class="col-md-2">
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
         </div>
-        <div class="col-md-8">
-          <%= render 'shared/nav' %>
-          <div>
-            <%= yield %>
+        <div class="col-md-10">
+          <div class="app-container">
+            <%= render 'shared/nav' %>
+            <div class="content-container">
+              <%= yield %>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
+
 
   </body>
 </html>

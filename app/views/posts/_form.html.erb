@@ -1,6 +1,5 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-1"></div>
 		<div class="col-md-6 ">
 			<%= form_for @post do |f| %>
 
@@ -12,7 +11,7 @@
 			</div>
 
 			<div class="form-group">
-				<%= f.text_area :rationale, placeholder: 'Rationale', rows: "5", cols: "60", class: "form-control" %>
+				<%= f.text_area :rationale, placeholder: 'Explanation for Overtime', rows: "5", cols: "60", class: "form-control" %>
 			</div>
 
 			<%= render partial: 'status', locals: { f: f } if current_user.type == 'AdminUser' %>
