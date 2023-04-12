@@ -2,6 +2,7 @@
 	<h1>Time Tracker</h1>
 </div>
 
+<% if current_user %>
 <ul class="custom-nav nav nav-tabs">
 	<li class="<%= active?(root_path) %> nav-item">
 		<%= link_to "Home", root_path %>
@@ -17,7 +18,9 @@
 	</li>
 	<li class="nav-item dropdown ml-md-auto pull-right d-flex">
 		<div class="dropdown dropdown-toggle">
-			<%= link_to "Admin", root_path %>
+			<% if current_user.type == 'AdminUser' %>
+				<%= link_to "Admin Dashboard", admin_root_path %>
+			<% end %>
 			<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %>
 		 <a class="nav-item dropdown dropdown-toggle d-flex flex-column" 
 		 data-toggle="dropdown d-flex flex-column"
@@ -32,3 +35,4 @@
 		</div>
 	</li>
 </ul>
+<% end %>
