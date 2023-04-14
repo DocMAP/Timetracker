@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
+
+
 	def index
 		@posts = Post.posts_by current_user
 	end
@@ -23,6 +25,11 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		unless current_user == 'AdminUser' || @post.status != 'approved'
+        	flash[:alert] = "You are not authorized to access this page."
+        	redirect_to(posts_path)
+      	end
+      	
 		authorize @post
 	end
 

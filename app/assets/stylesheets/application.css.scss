@@ -15,20 +15,23 @@ body {
 	padding-bottom: 5vh;
 	margin-top: 5vh;
 	min-width: 800px;
-	margin-right: 30vh;
-	min-height: 700px;
-
+	height: 90vh;
+	min-height: 300px;
+	
 }
 
 .content-container {
 	margin: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-
+	overflow-y: auto;
+	
+	max-height: 73vh;
+	
 }
 
 .form {
-	margin-left: 120px;
+
 	padding: 30px;
 }
 
