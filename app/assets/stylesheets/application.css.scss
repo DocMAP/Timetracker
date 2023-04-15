@@ -17,17 +17,24 @@ body {
 	min-width: 800px;
 	height: 90vh;
 	min-height: 300px;
-	
 }
 
 .content-container {
 	margin: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	overflow-y: auto;
-	
+	overflow-y: auto;	
 	max-height: 73vh;
-	
+}
+
+.submission-title {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.submission-link {
+	text-align: center;
+	padding-top: 60px;
 }
 
 .form {

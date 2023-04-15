@@ -1,2 +1,30 @@
-<h2>Show Page Unstyled</h2>
-<%= @post.inspect %>
+<div class="submission">	
+	<div class="submission-title">
+		<h3>
+			Submission # <%= @post.id %>, by <%= @post.user.full_name %>
+		</h3>
+	</div>
+
+	<div class="submission">
+		<div class="col-md-6">
+			<p><h4>For Payroll Date: </h4><%= @post.date.strftime('%a, %d %b %Y') %></p>
+			<br>
+			<p><h4>Additional hours requested: </h4><%= @post.hours_requested %></p>
+			<br>
+			<p><h4>Explanation for request: </h4><%= @post.rationale %></p>
+		</div>
+
+		<div class="col-md-6">
+			<p><h4>Date requested: </h4><%= @post.created_at.strftime('%d %b, %Y at %R') %></p>
+			<br>
+			<p><h4>Resubmission date: </h4><%= @post.updated_at.strftime('%d %b, %Y at %R') %></p>
+			<br>
+			<h4>Current status: <%= status_label @post.status %></h4>
+		</div>
+	</div>
+	<div class="submission-link col-md-12">
+		<hr>
+		<br>
+		<%= link_to 'Edit Submission', edit_post_path %>
+	</div>
+</div>
