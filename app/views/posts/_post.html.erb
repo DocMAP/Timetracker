@@ -12,7 +12,7 @@
 		<%= truncate(post.rationale, length: 20) %>
 	</td>
 	<td>
-		<%= post.status %>
+		<%= status_label post.status %>
 	</td>
 	<td>
 		<% if post.status != 'approved' %>
