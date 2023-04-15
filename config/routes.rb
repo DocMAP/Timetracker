@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   devise_for :users, skip: [:registrations]
 
   
+  get 'admin', to: 'admin#posts'
+
 
   root to: 'static#homepage'
 end

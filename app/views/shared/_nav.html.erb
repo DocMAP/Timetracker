@@ -26,7 +26,7 @@
 		</div>
 		<div class="dropdown dropdown-toggle">
 			<% if current_user.type == 'AdminUser' %>
-				<%= link_to "Admin Dashboard", admin_root_path %>
+				<%= link_to "Admin Dashboard", admin_posts_path %>
 			<% end %>
 			<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %>
 		 <a class="nav-item dropdown dropdown-toggle d-flex flex-column" 

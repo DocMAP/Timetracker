@@ -9,6 +9,9 @@
 		<%= post.user.full_name %>
 	</td>
 	<td>
+		<%= post.hours_requested %>
+	</td>
+	<td>
 		<%= truncate(post.rationale, length: 20) %>
 	</td>
 	<td>
@@ -20,6 +23,8 @@
 		<% end %>
 	</td>
 	<td>
-		<%= link_to 'Delete', post_path(post), data: { turbo_method: :delete }, id: "delete_post_#{post.id}_from_index" %>
+		<% if post.status != 'approved' %>
+			<%= link_to 'Delete', post_path(post), data: { turbo_method: :delete }, id: "delete_post_#{post.id}_from_index" %>
+		<% end %>
 	</td>
 </tr>

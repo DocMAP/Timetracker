@@ -10,6 +10,7 @@ class PostDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number.with_options(searchable: false),
     date: Field::Date.with_options(searchable: true),
+    hours_requested: Field::Number.with_options(searchable: false),
     rationale: Field::Text.with_options(searchable: true),
     user: Field::BelongsTo.with_options(searchable: false),
     created_at: Field::DateTime,
@@ -25,6 +26,7 @@ class PostDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     user
     status
+    hours_requested
     date
     rationale
   ].freeze
@@ -34,6 +36,7 @@ class PostDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     user
+    hours_requested
     status
     date
     rationale
@@ -45,9 +48,10 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    date
-    rationale
     user
+    date
+    hours_requested
+    rationale
     status
   ].freeze
 
