@@ -63,8 +63,6 @@ class UserDashboard < Administrate::BaseDashboard
     password
     first_name
     last_name
-    reset_password_sent_at
-    reset_password_token
     type
   ].freeze
 
