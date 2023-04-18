@@ -21,6 +21,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
     type: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    phone: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,7 +31,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     posts
-    password
+    phone
     email
     last_name
     first_name
@@ -41,6 +42,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     email
+    phone
     first_name
     last_name
     password
@@ -58,6 +60,7 @@ class AdminUserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     email
+    phone
     password
     first_name
     last_name
