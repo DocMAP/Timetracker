@@ -51,6 +51,7 @@ gem 'growl', '~> 1.0', '>= 1.0.3'
 gem 'administrate', '~> 0.18.0'
 gem 'bourbon', '~> 7.3'
 gem 'pundit', '~> 2.3'
+gem 'twilio-ruby', '~> 5.76'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
