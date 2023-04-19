@@ -21,3 +21,9 @@ puts "1 AdminUser created"
 end
 
 puts "20 Posts have been created"
+
+5.times do |audit_log|
+	AuditLog.create!(user_id: @user.id, status: 0, start_date: (Date.today - 2.days))
+end
+
+puts "5 AuditLogs have been created"

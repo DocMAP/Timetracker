@@ -13,7 +13,7 @@ class ApplicationPolicy
   end
 
   def show?
-    false
+    scope.where(:id => record.id).exixts?
   end
 
   def create?

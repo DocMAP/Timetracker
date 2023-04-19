@@ -12,10 +12,15 @@
 	<li class="<%= active?(new_post_path) %> nav-item">
 		<%= link_to "New Entry", new_post_path, id: 'new_post_from_nav' %>
 	</li>
-	<li class="nav-item">
+	<li class="<%= active?(admin_posts_path) %> nav-item">
 		<a class="nav-link disabled" href="#">Messages</a>
 	</li>
 	<% if current_user %>
+	<li class="<%= active?(audit_logs_path) %> nav-item">
+		<% if current_user.type == 'AdminUser' %>
+			<%= link_to "Audit Log", audit_logs_path %>
+		<% end %>
+	</li>
 	<li class="nav-item dropdown ml-md-auto pull-right d-flex">
 		<div class="dropdown">
 		  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
