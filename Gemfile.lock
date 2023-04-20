@@ -350,6 +350,7 @@ DEPENDENCIES
   growl (~> 1.0, >= 1.0.3)
   importmap-rails
   jbuilder
+  kaminari (~> 1.2, >= 1.2.2)
   noticed (~> 1.6)
   puma (~> 5.0)
   pundit (~> 2.3)
