@@ -5,7 +5,6 @@
 
 body {
 	background-color: #293f54;
-	
 }
 
 .app-container {
@@ -26,6 +25,25 @@ body {
 	overflow-y: auto;	
 	max-height: 73vh;
 }
+
+.pending-approval {
+	background-color: white;
+	color: red;
+	border: solid;
+	border-radius: 3px;
+	padding: 5px;
+
+}
+
+
+.pending-submissions {
+	background-color: whitesmoke;
+	margin-top: 10px;
+	border: solid;
+	border-radius: 3px;
+	padding: 5px;
+}
+
 
 .submission-title {
 	text-align: center;

@@ -1,1 +1,17 @@
-<h2>Hi admin</h2>
+
+<div class="container-fluid">
+	<h2>For each Admin:</h2>
+	<p>tasks to complete:</p>
+	
+	<div class="pending-approval">
+		<%= render 'pending_approval' %>
+	</div>
+
+	<div class="pending-submissions">
+		<h4 style="color: black">Employee past due submissions:</h4>
+		<hr>
+		import from previous weeks
+		<button class="btn btn-danger btn-sm pull-right">Send Reminder</button>
+		<hr>
+	</div>
+</div>

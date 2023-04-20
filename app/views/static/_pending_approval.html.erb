@@ -1,0 +1,30 @@
+<h4 style="color: black">Items pending your approval:</h4>
+<% @pending_approvals.each do |pending_approval| %>
+	<div class="row">
+		<div class="col-md-1">
+			<%= pending_approval.id %>
+		</div>
+		<div class="col-md-2">
+			<%= pending_approval.user.full_name %>
+		</div>
+		<div class="col-md-2">
+			<%= pending_approval.date %>
+		</div>
+		<div class="col-md-1">
+			<%= pending_approval.hours_requested %>
+		</div>
+		<div class="col-md-3">
+			<%= truncate(pending_approval.rationale, length: 20) %>
+		</div>
+		<div class="col-md-1">
+			
+		</div>
+		<div class="col-md-2">
+			Approve
+		</div>
+	</div>		
+<% end %>
+	<div class="pagination col-md-12">
+		<%= paginate @pending_approvals %>
+	</div>
+	<hr>
