@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		unless current_user == 'AdminUser' || @post.status != 'approved'
+		unless current_user.type == 'AdminUser' || @post.status != 'approved'
         	flash[:alert] = "You are not authorized to access this page."
         	redirect_to(posts_path)
       	end

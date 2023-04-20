@@ -11,7 +11,7 @@ class AuditLogDashboard < Administrate::BaseDashboard
     id: Field::Number,
     end_date: Field::Date,
     start_date: Field::Date,
-    status: Field::Number,
+    status: Field::Text.with_options(searchable: true),
     user: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -24,8 +24,9 @@ class AuditLogDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    end_date
+    user
     start_date
+    end_date
     status
   ].freeze
 
@@ -33,10 +34,10 @@ class AuditLogDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    end_date
-    start_date
-    status
     user
+    start_date
+    end_date
+    status
     created_at
     updated_at
   ].freeze
@@ -45,10 +46,10 @@ class AuditLogDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    end_date
-    start_date
-    status
     user
+    start_date
+    end_date
+    status
   ].freeze
 
   # COLLECTION_FILTERS
