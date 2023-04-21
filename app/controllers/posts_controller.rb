@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
-	before_action :set_post, only: [:show, :edit, :update, :destroy]
+	before_action :set_post, only: [:show, :edit, :update, :destroy, :approve]
 
+	def approve
+		@post.approved!
+		redirect_to root_path, notice: "The submission has been approved"
+	end
 
 	def index
 		@posts = Post.posts_by(current_user).page(params[:page]).per(10)
@@ -30,11 +34,10 @@ class PostsController < ApplicationController
         	redirect_to(posts_path)
       	end
       	
-		authorize @post
+
 	end
 
 	def update
-		authorize @post 
 		if @post.update(post_params)
 			redirect_to @post, notice: 'Your request was updated successfully'
 		else
