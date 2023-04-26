@@ -2,8 +2,12 @@ class PostsController < ApplicationController
 	before_action :set_post, only: [:show, :edit, :update, :destroy, :approve]
 
 	def approve
-		@post.approved!
-		redirect_to root_path, notice: "The submission has been approved"
+		if current_user.type == 'AdminUser' && @post.approved!
+			redirect_to root_path, notice: "The submission has been approved"
+		else
+			flash[:alert] = "You are not authorized to approve this page."
+        	redirect_to(root_path)
+        end
 	end
 
 	def index

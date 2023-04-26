@@ -1,4 +1,23 @@
-<h4 style="color: black; text-decoration: underline; margin-left: 20px;">Items pending your approval:</h4>
+<h4 style="color: black; text-decoration: underline; margin-left: 30px;">Submissions pending your approval:</h4>
+	<div class="row admin-tasks">
+		<div class="col-md-1">
+			#
+		</div>
+		<div class="col-md-2">
+			Employee
+		</div>
+		<div class="col-md-2">
+			Date Submitted
+		</div>
+		<div class="col-md-1">
+			Hours
+		</div>
+		<div class="col-md-3">
+			Rationale
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
 <% @pending_approvals.each do |pending_approval| %>
 	<div class="row">
 		<div class="col-md-1", style="text-align: center;">
@@ -7,10 +26,10 @@
 		<div class="col-md-2">
 			<%= pending_approval.user.full_name %>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-2", style="text-align: center;">
 			<%= pending_approval.date %>
 		</div>
-		<div class="col-md-1">
+		<div class="col-md-1", style="text-align: center;">
 			<%= pending_approval.hours_requested %>
 		</div>
 		<div class="col-md-3">

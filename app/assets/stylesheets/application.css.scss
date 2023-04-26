@@ -26,7 +26,7 @@ body {
   *::-webkit-scrollbar-thumb {
     background-color: #000000;
     border-radius: 10px;
-    border: 5px solid #ffffff;
+    border: 5px solid white;
   }
 
 .app-container {
@@ -38,6 +38,7 @@ body {
 	min-width: 600px;
 	height: 90vh;
 	min-height: 300px;
+	
 }
 
 .content-container {
@@ -46,6 +47,13 @@ body {
 	padding-right: 10px;
 	overflow-y: auto;	
 	max-height: 74vh;
+}
+
+.admin-tasks {
+	color: black;
+	border-bottom: solid;
+	border-color: red;
+	margin: -1px;
 }
 
 .pending-approval {
@@ -64,6 +72,8 @@ body {
 	border: solid;
 	border-radius: 3px;
 	padding: 5px;
+	max-height: 200px;
+	overflow-y: auto;
 }
 
 

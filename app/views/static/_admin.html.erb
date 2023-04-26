@@ -1,17 +1,13 @@
 
 <div class="container-fluid">
-	<h2>For each Admin:</h2>
-	<p>tasks to complete:</p>
-	
+	<h3>For each admin:</h3>
 	<div class="pending-approval">
 		<%= render 'pending_approval' %>
 	</div>
 
 	<div class="pending-submissions">
-		<h4 style="color: black">Employee past due submissions:</h4>
-		<hr>
-		import from previous weeks
-		<button class="btn btn-danger btn-sm pull-right">Send Reminder</button>
-		<hr>
+		<h4 style="color: black; text-decoration: underline; margin-left: 30px;">Employee past due submissions:</h4>
+		<%= render @pending_submissions %>
+<button class="btn btn-danger btn-sm pull-right">Send Reminder</button>
 	</div>
 </div>
