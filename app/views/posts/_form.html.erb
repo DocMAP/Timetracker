@@ -3,12 +3,19 @@
 			<%= form_for @post do |f| %>
 
 			<div class="form-group">
+					<%= f.label :Date_submitted, class: "control-label" %>
+				<div class="col-md-6 pull-right text-right">
+					<%= Date.current.strftime('%b %d, %Y') %>
+				</div>
+			</div>
+
+			<div class="form-group">
 				<%= f.label :additional_hours_requested, class: "control-label" %>
 				<%= f.text_field :hours_requested, class: "form-control" %>
 			</div>
 
 			<div class="form-group">
-				<%= f.label :date, class: "control-label" %>
+				<%= f.label :payroll_week_ending_date, class: "control-label" %>
 				<%= f.date_field :date, class: "form-control" %>
 			</div>
 
