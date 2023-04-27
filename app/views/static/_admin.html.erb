@@ -1,12 +1,18 @@
 
 <div class="container-fluid">
 	<h3>For each admin:</h3>
-
-	<div class="pending-approval">
-		<%= render 'pending_approval' %>
-	</div>
-
-	<div class="pending-submissions">
-		<%= render 'past_due' %>
-	</div>
+	<% if @pending_approvals %>
+		<div class="pending-approval">
+			<%= render 'pending_approval' %>
+		</div>
+	<% else %>
+		<h4>There are no submissions pending your approval. Thank you!</h4>
+	<% end %>
+	<% if @pending_submissions %>
+		<div class="pending-submissions">
+			<%= render 'past_due' %>
+		</div>
+	<% else %>
+		<h4>All submissions have been completed!</h4>
+	<% end %>
 </div>

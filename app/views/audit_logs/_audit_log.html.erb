@@ -9,7 +9,7 @@
 		<%= audit_log.start_date %>
 	</td>
 	<td>
-		<%= audit_log.end_date %>
+		<%= audit_log.date.confirmed! %>
 	</td>
 	<td>
 		<%= status_label audit_log.status %>

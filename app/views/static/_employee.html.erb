@@ -1,14 +1,23 @@
-<h2>Hi employee</h2>
-<p>messages to review:</p>
+<h2 style="text-align: center;">Welcome <%= current_user.first_name %>!</h2>
 
-<% @pending_confirmations.each do |pending_confirmation| %>
-	<div class="col-md-6">
-		<%= link_to "I confirm I did not have overtime for week: #{pending_confirmation.start_date}", confirm_audit_log_path(pending_confirmation), id: "confirm_#{pending_confirmation.id}", data: { turbo_confirm: "Are you sure you did not have overtime?" }, class: 'btn btn-primary btn-block' %>
-	</div>
-	<div class="col-md-6">
-		<%= link_to "I need to enter overtime for week: #{pending_confirmation.start_date}", new_post_path, class: 'btn btn-primary btn-block' %>
-	</div>
-	<br>
-	<br>
-<% end %>
-<hr>
+<div class="jumbotron">
+	<h4 style= "text-decoration: underline;">Messages to review:</h4>
+		<% if @pending_confirmations.count > 0 %>
+			<% @pending_confirmations.each do |pending_confirmation| %>
+				<div class="col-md-2", style= "margin-top: 5px;">
+					<%= Date.current.strftime('%b %d, %Y') %>
+				</div>
+				<div class="col-md-5", style= "margin-bottom: 5px;">
+					<%= link_to "I confirm I did not have overtime for week: #{pending_confirmation.start_date}", confirm_audit_log_path(pending_confirmation), id: "confirm_#{pending_confirmation.id}", data: { turbo_confirm: "Are you sure you did not have overtime?" }, class: 'btn btn-primary btn-sm btn-block' %>
+				</div>
+				
+				<div class="col-md-5", style= "margin-bottom: 5px;">
+					<%= link_to "I need to enter overtime for week: #{pending_confirmation.start_date}", new_post_path, class: 'btn btn-primary btn-sm btn-block' %>
+				</div>
+				<br>
+				<br>
+			<% end %>
+		<% else %>
+				<h5>You have no new messages to review!</h5>
+		<% end %>
+</div>
