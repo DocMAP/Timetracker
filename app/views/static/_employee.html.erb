@@ -1,2 +1,14 @@
 <h2>Hi employee</h2>
 <p>messages to review:</p>
+
+<% @pending_confirmations.each do |pending_confirmation| %>
+	<div class="col-md-6">
+		<%= link_to "I confirm I did not have overtime for week: #{pending_confirmation.start_date}", confirm_audit_log_path(pending_confirmation), id: "confirm_#{pending_confirmation.id}", data: { turbo_confirm: "Are you sure you did not have overtime?" }, class: 'btn btn-primary btn-block' %>
+	</div>
+	<div class="col-md-6">
+		<%= link_to "I need to enter overtime for week: #{pending_confirmation.start_date}", new_post_path, class: 'btn btn-primary btn-block' %>
+	</div>
+	<br>
+	<br>
+<% end %>
+<hr>

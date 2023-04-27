@@ -362,7 +362,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
-  turbo-rails
+  turbo-rails (~> 1.4)
   twilio-ruby (~> 5.76)
   tzinfo-data
   warden (~> 1.2, >= 1.2.9)
