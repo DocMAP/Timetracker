@@ -1,5 +1,6 @@
 
 <div class="container-fluid">
+	Hello <%= current_user.full_name %>
 	<h3>For each admin:</h3>
 	<% if @pending_approvals %>
 		<div class="pending-approval">
